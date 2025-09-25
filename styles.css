@@ -1,0 +1,305 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+    position: relative;
+}
+
+.container {
+    text-align: left; /* 改为左对齐 */
+    width: 100%;
+    max-width: 1200px; /* 增加最大宽度以容纳三列 */
+    padding: 20px;
+    margin: 0 auto;
+    padding-top: 115px; /* 调整为新的顶部元素留出空间 */
+}
+
+#project-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px; /* 卡片之间的间距 */
+}
+
+#page-title {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    color: #333;
+    margin: 0;
+    font-size: 32px; /* 调大标题字体 */
+    line-height: 50px; /* 与按钮高度对齐 */
+}
+
+.header-divider {
+    position: fixed;
+    top: 75px; /* 调整分割线位置以适应新的按钮大小 */
+    left: 20px;
+    right: 20px;
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin: 0;
+}
+
+.quote-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.quote {
+    font-size: 18px;
+    font-style: italic;
+    color: #666;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.project-item {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    flex: 1 1 calc(33.333% - 20px); /* 一行显示三个，减去间距 */
+    max-width: calc(33.333% - 20px);
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.project-item h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-size: 16px; /* 缩小标题字体 */
+    text-align: center;
+    align-self: center;
+}
+
+.project-item p {
+    margin: 3px 0;
+    color: #666;
+    font-size: 14px; /* 缩小文字字体 */
+    text-align: center;
+    align-self: center;
+}
+
+.notes-display {
+    font-style: italic;
+    color: #666;
+    margin: 8px 0;
+    padding: 6px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    text-align: center;
+    width: 100%;
+    font-size: 12px; /* 缩小备注字体 */
+    align-self: center;
+}
+
+/* 累计信息容器 */
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* 数字左对齐 */
+    width: 45%; /* 给每个项目分配相等的宽度 */
+}
+
+.stat-item .stat-label {
+    text-align: center; /* 标签文字居中 */
+    width: 100%; /* 占满容器宽度 */
+}
+
+.stat-item .time-display {
+    font-family: 'Courier New', monospace;
+    font-size: 18px; /* 缩小时间显示字体 */
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.stat-item span:not(.time-display) {
+    font-size: 12px;
+    color: #666;
+}
+
+.time-display {
+    font-family: 'Courier New', monospace;
+    font-size: 18px; /* 缩小时间显示字体 */
+    font-weight: bold;
+    color: #333;
+    margin: 8px 0;
+    text-align: center;
+    align-self: center;
+}
+
+/* 进度条样式 */
+.progress-container {
+    width: 100%;
+    height: 12px;
+    background-color: #e0e0e0;
+    border-radius: 6px;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(to right, #4CAF50, #8BC34A);
+    border-radius: 6px;
+    transition: width 0.3s ease;
+}
+
+.project-item button {
+    margin: 0;
+    padding: 6px 10px; /* 进一步缩小按钮 */
+    border: none;
+    border-radius: 4px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    font-size: 11px; /* 进一步缩小按钮字体 */
+    transition: background-color 0.3s;
+    flex: 1; /* 使按钮均匀分布 */
+    min-width: 0; /* 允许按钮收缩 */
+}
+
+.project-item button:hover {
+    background-color: #555;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 5px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#add-project {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px; /* 调小按钮宽度 */
+    height: 40px; /* 调小按钮高度 */
+    border-radius: 50%;
+    background-color: #333;
+    color: white;
+    font-size: 20px; /* 调小字体大小 */
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 100; /* 确保按钮在最上层 */
+}
+
+#add-project:hover {
+    background-color: #555;
+}
+
+.time-display {
+    font-family: 'Courier New', monospace;
+    font-size: 18px; /* 缩小时间显示字体 */
+    font-weight: bold;
+    color: #333;
+    margin: 8px 0;
+}
+
+/* 模态框样式 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    color: #333;
+    text-align: center;
+}
+
+.modal-content label {
+    display: block;
+    margin: 15px 0 5px;
+    text-align: left;
+    color: #333;
+    font-weight: bold;
+}
+
+.modal-content input,
+.modal-content textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.modal-content button {
+    width: 100%;
+    padding: 12px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.modal-content button:hover {
+    background-color: #555;
+}
+
+.notes-display {
+    font-style: italic;
+    color: #666;
+    margin: 8px 0;
+    padding: 6px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    text-align: left;
+    width: 100%;
+    font-size: 12px; /* 缩小备注字体 */
+}
