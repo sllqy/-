@@ -303,3 +303,83 @@ body {
     width: 100%;
     font-size: 12px; /* 缩小备注字体 */
 }
+
+/* 响应式设计 - 移动端适配 */
+@media screen and (max-width: 768px) {
+    .container {
+        padding-top: 100px;
+    }
+    
+    #project-list {
+        gap: 15px;
+    }
+    
+    .project-item {
+        flex: 1 1 calc(50% - 15px);
+        max-width: calc(50% - 15px);
+    }
+    
+    #page-title {
+        font-size: 24px;
+        line-height: 40px;
+    }
+    
+    .header-divider {
+        top: 65px;
+    }
+    
+    #add-project {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 15px;
+        padding-top: 100px;
+    }
+    
+    #project-list {
+        gap: 10px;
+    }
+    
+    .project-item {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+    
+    #page-title {
+        font-size: 20px;
+        left: 15px;
+        line-height: 35px;
+    }
+    
+    .header-divider {
+        top: 60px;
+        left: 15px;
+        right: 15px;
+    }
+    
+    #add-project {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+        top: 15px;
+        right: 15px;
+    }
+    
+    .quote {
+        font-size: 16px;
+    }
+    
+    .modal-content {
+        width: 95%;
+        padding: 15px;
+    }
+    
+    .modal-content h2 {
+        font-size: 20px;
+    }
+}
